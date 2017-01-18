@@ -1,0 +1,41 @@
+java.io.File类用于表示文件（目录）
+File只用于表示文件（目录）的信息（名字，大小等），不能用于文件内容的访问。
+
+RandomAccessFile java提供对文件内容的访问类，即可读文件，也可写文件
+RandomAccessFile可以随机访问文件，可以访问文件的任意位置
+1.java文件模型：
+    在硬盘上的文件是byte byte byte存储的，是数据的集合
+2.打开方式：
+    有两种模式,"rw"(读写)，"r"(只读)
+    RandomAccessFile raf = new RandomAccessFile(file,"rw");
+    文件指针：打开文件时指针在开头point = 0
+3.写文件
+    raf.writer();只写一个字节（后8位），同时指针指向下一个位置，准备再次写入
+4.读文件
+    int i = raf.read();只读一个字节
+5.文件读写完成以后一定要关闭文件
+
+IO流（输入流，输出流）
+字节流，字符流
+1.InputStream,OutputStream
+InputStream:抽象了应用程序读取数据的方式
+OutputStream:抽象了应用程序写入数据的方法
+2.EOF = END 读到-1就结尾
+3.输入流基本方法
+    int b = in.read();读取一个字符无符号填充到int的低八位,-1是EOF
+    in.read(byte[] buffer);
+    in.read(byte[],int start,int size);
+4.输出流基本方法
+    out.write(int b);写一个字节到流,b的第八位
+    out.write(byte[] buffer);
+    out.write(byte[] buffer,int start,int size);
+
+DataInputStream/DataOutputStream
+对"流"功能的扩展，可以更加方面的读取int，long，字符等类型的数据
+
+
+BufferInputStream/BufferOutputStream
+这两个流类为IO提供了带缓存区的操作，一般打开文件进行写入或读取操作时，都会加上缓存，这种流模式提高了IO的性能
+
+
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bookstore>
+    <book id="1" name="123">
+        <name>冰与火之歌</name>
+        <author>马丁·乔治</author>
+        <year>2004.5</year>
+        <price>49.99</price>
+    </book>
+    <book id="2">
+        <name>斗破苍穹</name>
+        <author>天蚕土豆</author>
+        <price>69.00</price>
+        <year>2010.2</year>
+    </book>
+</bookstore>
